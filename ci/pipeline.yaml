@@ -6,9 +6,16 @@ resources:
     branch: devel
 
 jobs:
-- name: kubevalonline
+- name: job-build-kubevalonline
   plan:
   - get: kubevalonline
     trigger: true
   - task: build
-    file: kubevalonline/build.yaml
+    file: kubevalonline/ci/tasks/build.yaml
+
+- name: job-tests-kubevalonline
+  plan:
+  - get: kubevalonline
+    trigger: true
+  - task: task-tests-kubevalonline
+    file: kubevalonline/ci/tasks/test.yaml
