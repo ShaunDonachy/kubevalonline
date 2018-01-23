@@ -1,0 +1,14 @@
+resources:
+- name: kubevalonline
+  type: git
+  source:
+    uri: https://github.com/shaundonachy/kubevalonline
+    branch: devel
+
+jobs:
+- name: kubevalonline
+  plan:
+  - get: kubevalonline
+    trigger: true
+  - task: build
+    file: kubevalonline/build.yaml
