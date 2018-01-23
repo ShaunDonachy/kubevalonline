@@ -9,7 +9,7 @@ import (
 
 var (
 	// TemplateDir is the directory containing the html/template template files.
-	TemplateDir = filepath.Join(defaultBase("github.com/donachys/kubevalonline/app"), "templates")
+	TemplateDir = filepath.Join(defaultBase("github.com/shaundonachy/kubevalonline/app"), "templates")
 )
 
 func renderTemplate(rw http.ResponseWriter, tmpl string) error {

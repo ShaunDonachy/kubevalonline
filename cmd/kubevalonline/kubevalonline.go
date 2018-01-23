@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/donachys/kubevalonline/api"
-	"github.com/donachys/kubevalonline/app"
+	"github.com/shaundonachy/kubevalonline/api"
+	"github.com/shaundonachy/kubevalonline/app"
 	"github.com/gorilla/handlers"
 )
 

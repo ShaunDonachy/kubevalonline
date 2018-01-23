@@ -6,12 +6,12 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/donachys/kubevalonline/router"
+	"github.com/shaundonachy/kubevalonline/router"
 )
 
 var (
 	// StaticDir is the directory containing static assets.
-	StaticDir = filepath.Join(defaultBase("github.com/donachys/kubevalonline/app"), "static")
+	StaticDir = filepath.Join(defaultBase("github.com/shaundonachy/kubevalonline/app"), "static")
 )
 
 // Handler sets up routes.

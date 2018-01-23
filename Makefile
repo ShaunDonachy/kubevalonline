@@ -1,18 +1,23 @@
 NAME=kubevalonline
-IMAGE_NAME=donachys/$(NAME)
-PACKAGE_NAME=github.com/donachys/$(NAME)
+IMAGE_NAME=shaundonachy/$(NAME)
+PACKAGE_NAME=github.com/shaundonachy/$(NAME)
 GOFMT_FILES?=$$(find . -name '*.go' | grep -v vendor)
 TAG=0.0.0# $$(git describe --abbrev=0 --tags)
+
+HAS_DEP := $(shell command -v dep;)
 
 clean:
 	rm -rf bin
 
 test:
 	go test -timeout 30s -cover \
-	github.com/donachys/kubevalonline/api \
-	github.com/donachys/kubevalonline/app
+	github.com/shaundonachy/kubevalonline/api \
+	github.com/shaundonachy/kubevalonline/app
 
 vendor:
+	ifndef HAS_DEP
+		go get -u github.com/golang/dep/cmd/dep
+	endif
 	dep ensure
 
 coveralls: vendor
