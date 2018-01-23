@@ -14,4 +14,5 @@ make test | tee test_coverage.txt
 sed -i -e 's/^/     /' test_coverage.txt
 
 # Move to coverage-results directory.
+mkdir -p $GOPATH/coverage-results
 mv test_coverage.txt $GOPATH/coverage-results/.
